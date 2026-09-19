@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>You Matter 🌸</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div id="petals"></div>
+
+    <main class="simple-page">
+
+        <h1>🌸 You Matter</h1>
+
+        <p class="subtitle">
+            Just in case you needed the reminder today.
+        </p>
+
+
+        <div class="simple-message">
+
+            <h2 id="randomMessage">
+                Don't forget to be proud of yourself.
+            </h2>
+
+            <p id="randomSubMessage">
+                You're loved, you're missed, and someone back home
+                is always thinking about you. 💗
+            </p>
+
+        </div>
+
+
+        <a
+            href="../index.html?dashboard=true"
+            class="back-home"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </main>
+
+
+    <script>
+
+        const messages = [
+
+            {
+                title: "Don't forget to be proud of yourself.",
+                text: "No matter where you are or how today went, you're loved, you're missed, and someone back home is always thinking about you. 💗"
+            },
+
+            {
+                title: "You are doing better than you think.",
+                text: "Even on the days that don't feel special, you're still growing, learning and becoming someone you're going to be proud of. 🌸"
+            },
+
+            {
+                title: "It's okay to miss home.",
+                text: "Missing the people you love doesn't make your adventure any less exciting. It just means you have something beautiful to come back to. 💗"
+            },
+
+            {
+                title: "Take it one day at a time.",
+                text: "You don't have to have everything figured out. Enjoy today, breathe, and let tomorrow come when it does. 🌸"
+            },
+
+            {
+                title: "Go make a memory today.",
+                text: "Try something new, take a picture, laugh too loudly, get a little lost, and make one of those memories you'll talk about for years. 🇯🇵"
+            },
+
+            {
+                title: "You deserve to enjoy this.",
+                text: "You've worked hard to get here. Look around, take it all in, and let yourself be excited about everything waiting for you. 💗"
+            },
+
+            {
+                title: "Someone back home is cheering for you.",
+                text: "Even when you can't see us, know that someone is always rooting for you from home. 🌸"
+            },
+
+            {
+                title: "You're never really alone.",
+                text: "Distance might make things feel different, but the people who love you are still only a message, a call, or a memory away. 💗"
+            },
+
+            {
+                title: "This is your chapter.",
+                text: "Go explore it. Make mistakes. Meet people. Try things. Laugh a lot. Make this a year you'll always remember. 🇯🇵🌸"
+            },
+
+            {
+                title: "Come back here whenever you need to.",
+                text: "This little corner will always be here to remind you that home is still home, no matter how many kilometres are between us. 💗"
+            },
+
+            {
+                title: "You don't have to be productive every day.",
+                text: "Some days are for exploring, some are for studying, and some are just for lying in bed and watching something. All of them count. 🌸"
+            },
+
+            {
+                title: "You're allowed to be excited.",
+                text: "Let yourself be excited about the little things. New food, new places, new friends, new memories. You deserve all of it. 💗"
+            },
+
+            {
+                title: "Don't forget to look around.",
+                text: "One day you'll wish you could come back to this exact moment. So pause sometimes and take it all in. 🇯🇵"
+            },
+
+            {
+                title: "You can do hard things.",
+                text: "You've already made it this far. Whatever today throws at you, take it slowly and remember how capable you are. 🌸"
+            },
+
+            {
+                title: "You're creating memories right now.",
+                text: "Even the ordinary days will become stories someday. Take pictures, laugh a lot, and enjoy the little moments. 💗"
+            },
+
+            {
+                title: "Don't be afraid to try something new.",
+                text: "You're in Japan! Say yes to something you've never done before. You might find a new favourite thing. 🇯🇵🌸"
+            },
+
+            {
+                title: "Home is always waiting for you.",
+                text: "No matter how far you travel or how long you're away, there will always be a little piece of home waiting for you. 💗"
+            },
+
+            {
+                title: "Be kind to yourself today.",
+                text: "You don't need to have the perfect day. Just do your best, take care of yourself, and remember that tomorrow is another chance. 🌸"
+            },
+
+            {
+                title: "I hope something makes you smile today.",
+                text: "Maybe it's good food, a funny conversation, a beautiful view, or something completely random. Whatever it is, hold onto that little moment. 💗"
+            },
+
+            {
+                title: "We're going to want all the stories.",
+                text: "So go have the adventures, take the pictures, make the memories and come back with a million stories to tell. 🇯🇵🌸"
+            }
+
+        ];
+
+
+        const randomIndex =
+            Math.floor(Math.random() * messages.length);
+
+        const selectedMessage =
+            messages[randomIndex];
+
+
+        document.getElementById("randomMessage").textContent =
+            selectedMessage.title;
+
+        document.getElementById("randomSubMessage").textContent =
+            selectedMessage.text;
+
+    </script>
+
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

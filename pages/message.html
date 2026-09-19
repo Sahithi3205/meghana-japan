@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter for Today 💌</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div id="petals"></div>
+
+    <main class="simple-page">
+
+        <h1>💌 A Letter for Today</h1>
+
+        <p class="subtitle">
+            Something from home, waiting just for you.
+        </p>
+
+
+        <!-- CLOSED LETTER -->
+
+        <div
+            class="letter-envelope"
+            id="letterEnvelope"
+            onclick="openLetter()"
+        >
+
+            <div class="envelope-icon">
+                💌
+            </div>
+
+            <h2>
+                A Letter From Home
+            </h2>
+
+            <p>
+                There's something waiting inside...
+            </p>
+
+            <span class="open-letter-text">
+                Click to open 🌸
+            </span>
+
+        </div>
+
+
+        <!-- OPENED LETTER -->
+
+        <div
+            class="letter-content hidden"
+            id="letterContent"
+        >
+
+            <div class="letter-paper">
+
+                <div class="letter-top-flower">
+                    🌸
+                </div>
+
+                <p class="letter-dear">
+                    Dear Meghana,
+                </p>
+
+                <div id="letterText"></div>
+
+                <p class="letter-signature">
+                    With lots of love,<br>
+                    Sawhithi💗
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="../index.html?dashboard=true"
+            class="back-home"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </main>
+
+
+    <script>
+
+        const letters = [
+
+            [
+                "So you're really going to Japan. 🇯🇵",
+
+                "I hope this year gives you more memories than you could ever fit into a photo album. I hope you explore new places, meet amazing people, try things you've never tried before, and have those random little moments that you remember years later.",
+
+                "There will probably be days when everything feels exciting and perfect, and there might also be days when you feel tired, overwhelmed, or just miss home. And that's completely okay.",
+
+                "While you're busy discovering Japan, there are people back home who are going to be thinking about you, missing you, and waiting to hear all your stories.",
+
+                "So take lots of pictures. Try all the vegetarian food. Get on that random train. Find your favourite café. Get a little lost. Laugh way too much. Make mistakes. Make friends. And most importantly, enjoy being there.",
+
+                "And whenever you miss home, come back to this little corner. It's always going to be here for you.",
+
+                "No matter how many kilometres are between us, you're never really that far away."
+            ],
+
+            [
+                "I still can't believe you're actually going to Japan. 🇯🇵",
+
+                "I hope you realise how exciting this chapter is. You're going to have days that you've imagined for so long, and you're going to have completely random days that somehow become your favourite memories.",
+
+                "Don't feel like you have to make every single day perfect. Some days can just be slow. Some days can be chaotic. Some days can be spent eating something amazing and wandering around without a plan.",
+
+                "Just promise me you'll take enough pictures because I want to see everything when you come back.",
+
+                "And if you ever feel homesick, remember that home hasn't gone anywhere. Everyone is still here, cheering you on and waiting for your stories.",
+
+                "Go have the adventure you've been waiting for. 🌸"
+            ],
+
+            [
+                "Before you start this new chapter, I just want you to remember something.",
+
+                "You don't have to know exactly how everything is going to go. You don't have to make every decision perfectly. You're allowed to figure things out as you go.",
+
+                "Go explore. Try things. Get lost. Find little places you love. Make friends. Take embarrassing pictures. Laugh until your stomach hurts.",
+
+                "And when you have one of those days where everything feels a little too much, take a breath and remember that you're doing something incredibly special.",
+
+                "Japan is going to become a collection of tiny moments that you'll carry with you for years.",
+
+                "So enjoy every one of them. 💗"
+            ]
+
+        ];
+
+
+        const selectedLetter =
+            letters[
+                Math.floor(Math.random() * letters.length)
+            ];
+
+
+        const letterText =
+            document.getElementById("letterText");
+
+
+        selectedLetter.forEach(function(paragraph) {
+
+            const p = document.createElement("p");
+
+            p.textContent = paragraph;
+
+            letterText.appendChild(p);
+
+        });
+
+
+        function openLetter() {
+
+            document
+                .getElementById("letterEnvelope")
+                .classList.add("hidden");
+
+            document
+                .getElementById("letterContent")
+                .classList.remove("hidden");
+
+        }
+
+    </script>
+
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Adventure 🌸</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div id="petals"></div>
+
+    <main class="simple-page">
+
+        <!-- PAGE TITLE -->
+
+        <h1>⏳ Your Adventure</h1>
+
+        <p class="subtitle">
+            Every day is another chapter.
+        </p>
+
+
+        <!-- COUNTDOWN CARD -->
+
+        <div class="countdown-card">
+
+            <h2 id="countdownHeading">
+                Days Until Japan
+            </h2>
+
+
+            <div class="countdown-number">
+
+                <span id="countdownNumber">
+                    5
+                </span>
+
+                <span
+                    class="countdown-days"
+                    id="countdownDays"
+                >
+                    days
+                </span>
+
+            </div>
+
+
+            <p
+                class="countdown-text"
+                id="countdownText"
+            >
+                Every day is one day closer to your adventure. 🌸
+            </p>
+
+
+            <p class="countdown-extra">
+                Keep exploring, keep trying new things, and remember
+                that home will always be waiting for you. 💗
+            </p>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <a
+            href="../index.html?dashboard=true"
+            class="back-home"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </main>
+
+
+    <script>
+
+        /*
+        ==========================================
+        JAPAN COUNTDOWN
+
+        Sept 24, 2026 = Day 0
+        Sept 25, 2026 = Day 1
+        Sept 26, 2026 = Day 2
+        etc.
+        ==========================================
+        */
+
+        const departureDate = new Date(
+            2026,
+            8,
+            24
+        );
+
+
+        function updateCountdown() {
+
+            const now = new Date();
+
+
+            /*
+            Remove the time so the countdown
+            changes exactly by calendar day.
+            */
+
+            const today = new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate()
+            );
+
+
+            const difference =
+                departureDate.getTime() -
+                today.getTime();
+
+
+            const millisecondsPerDay =
+                1000 * 60 * 60 * 24;
+
+
+            const daysUntil =
+                Math.round(
+                    difference /
+                    millisecondsPerDay
+                );
+
+
+            const number =
+                document.getElementById(
+                    "countdownNumber"
+                );
+
+            const days =
+                document.getElementById(
+                    "countdownDays"
+                );
+
+            const heading =
+                document.getElementById(
+                    "countdownHeading"
+                );
+
+            const text =
+                document.getElementById(
+                    "countdownText"
+                );
+
+
+            /* ==========================
+               BEFORE SEPTEMBER 24
+            ========================== */
+
+            if (daysUntil > 0) {
+
+                number.textContent =
+                    daysUntil;
+
+                days.textContent =
+                    daysUntil === 1
+                        ? "day"
+                        : "days";
+
+                heading.textContent =
+                    "Days Until Japan";
+
+                text.textContent =
+                    "Every day is one day closer to your adventure. 🌸";
+
+            }
+
+
+            /* ==========================
+               SEPTEMBER 24 = DAY 0
+            ========================== */
+
+            else if (daysUntil === 0) {
+
+                number.textContent = "0";
+
+                days.textContent = "days";
+
+                heading.textContent =
+                    "Day 0";
+
+                text.textContent =
+                    "Your Japan adventure begins today! 🇯🇵🌸";
+
+            }
+
+
+            /* ==========================
+               AFTER SEPTEMBER 24
+            ========================== */
+
+            else {
+
+                const japanDay =
+                    Math.abs(daysUntil);
+
+
+                number.textContent =
+                    japanDay;
+
+                days.textContent =
+                    japanDay === 1
+                        ? "day"
+                        : "days";
+
+                heading.textContent =
+                    "Your Japan Adventure";
+
+                text.textContent =
+                    "Day " +
+                    japanDay +
+                    " of your Japan adventure. 🇯🇵🌸";
+
+            }
+
+        }
+
+
+        updateCountdown();
+
+
+        /*
+        Check once every minute so it
+        automatically changes at midnight.
+        */
+
+        setInterval(
+            updateCountdown,
+            60000
+        );
+
+    </script>
+
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
